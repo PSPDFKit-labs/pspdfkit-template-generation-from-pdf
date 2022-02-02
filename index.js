@@ -6,11 +6,12 @@ const baseUrl = `${window.location.protocol}//${window.location.host}/assets/`;
   const res = await fetch("/data.json");
   const data = await res.json();
 
+  // load the PDF in headless mode
   const instance = await PSPDFKit.load({
     baseUrl,
     headless: true,
     document: "/document.pdf",
-    licenseKey: "YOUR_LICENSE_KEY", // OPTINAL License Key - If you have a license key, you can use it here. If not, please remove this line.
+    licenseKey: "YOUR_LICENSE_KEY", // OPTIONAL License Key - If you have a license key, you can use it here. If not, please remove this line.
   });
 
   // Create a free text annotation.
@@ -62,11 +63,12 @@ const baseUrl = `${window.location.protocol}//${window.location.host}/assets/`;
   const flattenedDocument = await instance.exportPDF({ flatten: true });
   // console.log(await instance.exportInstantJSON());
 
+  // load the PDF with the UI
   await PSPDFKit.load({
     baseUrl,
     document: flattenedDocument,
     container: "#pspdfkit",
-    licenseKey: "YOUR_LICENSE_KEY", // OPTINAL License Key - If you have a license key, you can use it here. If not, please remove this line.
+    licenseKey: "YOUR_LICENSE_KEY", // OPTIONAL License Key - If you have a license key, you can use it here. If not, please remove this line.
   });
 })();
 
