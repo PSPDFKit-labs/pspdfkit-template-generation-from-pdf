@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "pspdfkit": "^2022.1.1"
+  }
+}
