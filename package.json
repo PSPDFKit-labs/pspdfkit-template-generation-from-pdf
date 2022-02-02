@@ -1,5 +1,28 @@
 {
+  "name": "pspdfkit-template-generation-from-pdf",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "node scripts/copy-pspdfkit-files"
+  },
   "dependencies": {
     "pspdfkit": "^2022.1.1"
-  }
+  },
+  "devDependencies": {
+    "ncp": "^2.0.0"
+  },
+  "description": "Generate a template from a PDF file",
+  "main": "index.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PSPDFKit-labs/pspdfkit-template-generation-from-pdf.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PSPDFKit-labs/pspdfkit-template-generation-from-pdf/issues"
+  },
+  "homepage": "https://github.com/PSPDFKit-labs/pspdfkit-template-generation-from-pdf#readme"
 }
