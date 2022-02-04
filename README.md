@@ -44,6 +44,4 @@ To learn more about this feature, make sure to read the accompanying [guide](htt
 
 ## Contributing
 
-Please ensure
-[you have signed our CLA](https://pspdfkit.com/guides/web/current/miscellaneous/contributing/) so that we can
-accept your contributions.
+Please ensure [you have signed our CLA](https://pspdfkit.com/guides/web/current/miscellaneous/contributing/) so that we can accept your contributions.

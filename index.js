@@ -2,6 +2,8 @@ import "./assets/pspdfkit.js";
 
 const baseUrl = `${window.location.protocol}//${window.location.host}/assets/`;
 
+const searchQuery = "Company Ltd.";
+
 (async () => {
   const res = await fetch("/data.json");
   const data = await res.json();
@@ -16,6 +18,7 @@ const baseUrl = `${window.location.protocol}//${window.location.host}/assets/`;
 
   // Create a free text annotation.
   const textAnnotation = new PSPDFKit.Annotations.TextAnnotation({
+    // COMPANY bounding box
     boundingBox: new PSPDFKit.Geometry.Rect({
       height: 9.0675048828125,
       left: 60.375,
@@ -30,6 +33,7 @@ const baseUrl = `${window.location.protocol}//${window.location.host}/assets/`;
   });
 
   const textAnnotation2 = new PSPDFKit.Annotations.TextAnnotation({
+    // [Company Info] bounding box
     boundingBox: new PSPDFKit.Geometry.Rect({
       height: 9.0675048828125,
       left: 478.6350402832031,
@@ -43,13 +47,11 @@ const baseUrl = `${window.location.protocol}//${window.location.host}/assets/`;
     backgroundColor: PSPDFKit.Color.WHITE,
   });
 
+  // Company Ltd. bounding box
+  const bbox = (await instance.search(searchQuery)).first().rectsOnPage.get(0);
+
   const textAnnotation3 = new PSPDFKit.Annotations.TextAnnotation({
-    boundingBox: new PSPDFKit.Geometry.Rect({
-      height: 10.8809814453125,
-      left: 60.540000915527344,
-      top: 188.53802490234375,
-      width: 57.52800750732422,
-    }),
+    boundingBox: bbox,
     fontSize: 8,
     text: data.companyName,
     pageIndex: 0,
